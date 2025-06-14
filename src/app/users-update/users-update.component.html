@@ -1,0 +1,49 @@
+<div class="container-fluid" style="height: 100vh;">
+    <div class="row p-3">
+        <div class="col-xl-12 p-3">
+            <div class="card w-50 mx-auto">
+                <div class="card-header">
+                    <h4>Update</h4>
+                </div>
+
+                <div class="card-body">
+                    <div class="row">
+                        <form [formGroup]="updateUserForm" class="row g-3">
+                            <div class="col-xl-6">
+                                <label for="" class="form-label">First Name</label>
+                                <input type="text" class="form-control" formControlName="firstName">
+                            </div>
+
+                            <div class="col-xl-6">
+                                <label for="" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" formControlName="lastName">
+                            </div>
+
+                            <div class="col-xl-6">
+                                <label for="" class="form-label">Email</label>
+                                <input type="text" class="form-control" formControlName="email">
+                            </div>
+
+                            <div class="col-xl-6">
+                                <label for="" class="form-label">Contact</label>
+                                <input type="text" class="form-control" formControlName="contact">
+                            </div>
+
+                            <div class="col-xl-6">
+                                <label for="" class="form-label">Skill</label>
+                                <input type="text" class="form-control"formControlName="skill">
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <button class="button btn btn-success float-end" type="button" (click)="onSubmit()">
+                        Registration
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
