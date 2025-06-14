@@ -79,7 +79,7 @@ exports.deleteUsers = async (req,res)=>{
 exports.getUserById = async (req,res)=>{
     try{
         const {id} = req.params;
-        const result = await User.findById({_id:id})
+        const result = await User.findOne({_id:id})
 
         if(result){
             res.status(200).json({result})

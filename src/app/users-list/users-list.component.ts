@@ -29,4 +29,16 @@ export class UsersListComponent {
       }
     });
   }
+
+  deleteData(id: any) {
+    this.userService.deleteUser(id).subscribe({
+      next: (resp) => {
+        console.log(resp, 'User deleted successfully');
+        this.getUsers(); // Refresh the list after deletion
+      },
+      error: (error) => {
+        console.error('Error deleting user:', error);
+      }
+    });
+  }
 }

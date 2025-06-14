@@ -18,7 +18,7 @@
                 </thead>
 
                 <tbody>
-                    @for(item of userslist?.result; track item.id; let i = $index) {
+                    @for(item of userslist?.result; track item?._id; let i = $index) {
                         <tr>
                             <td>{{ i +1}}</td>
                             <td>{{ item.firstName }} {{item.lastName}}</td>
@@ -27,7 +27,7 @@
                             <td>{{ item.skill }}</td>
                             <td>
                                 <button class="btn btn-success" [routerLink]="'/update/'+ item._id">Edit</button>
-                                <button class="btn btn-danger" routerLink="/">Delete</button>
+                                <button class="btn btn-danger" (click)="deleteData(item._id)">Delete</button>
                             </td>
                         </tr>
                     }

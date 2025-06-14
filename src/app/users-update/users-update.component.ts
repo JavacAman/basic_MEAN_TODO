@@ -21,7 +21,6 @@ constructor (
   const id = this.route.snapshot.paramMap.get('id');
   if (id) {
     this.getUserData(id); 
-    console.error('User ID is not provided in the route parameters.');
   }
 
   this.updateUserForm = new FormGroup({
@@ -59,7 +58,7 @@ getUserData(id:any){
     lastName: new FormControl(this.data.result.lastName ),
     email: new FormControl(this.data.result.email ),
     contact: new FormControl(this.data.result.contact ),
-    skill: new FormControl(this.data.skill ),
+    skill: new FormControl(this.data.result.skill ),
 })
 } ,
   error: (error) => {
