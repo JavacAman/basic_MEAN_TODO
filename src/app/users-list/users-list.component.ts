@@ -31,6 +31,10 @@ export class UsersListComponent {
   }
 
   deleteData(id: any) {
+    const isConfirm = confirm('Are you sure you want to delete this user?');
+    if (!isConfirm) {
+      return;
+    }
     this.userService.deleteUser(id).subscribe({
       next: (resp) => {
         console.log(resp, 'User deleted successfully');

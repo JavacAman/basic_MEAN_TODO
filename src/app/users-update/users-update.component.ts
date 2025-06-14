@@ -36,11 +36,11 @@ constructor (
 }
   onSubmit(){
     console.log(this.updateUserForm.value);
-    this.userService.createUser(this.updateUserForm.value).subscribe({
+    const id = this.route.snapshot.paramMap.get('id');
+    this.updateUserForm.value.id = id; 
+    this.userService.updateUser(this.updateUserForm.value).subscribe({
       next: (resp) => {
-        console.log(resp, 'User created successfully');
-        this.updateUserForm.reset();
-      },
+        alert('Updated successfully');      },
       error: (error) => {
         console.error('Error creating user:', error);
       }

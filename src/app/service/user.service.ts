@@ -18,6 +18,9 @@ export class UserService {
   createUser(data: any) {
     return this.http.post(this.url + 'users', data);
   }
+  updateUser(data: any) {
+    return this.http.put(this.url + 'users', data);
+  }
 
   getUserById(id: string) {
     return this.http.get(this.url + 'users/' + id);
