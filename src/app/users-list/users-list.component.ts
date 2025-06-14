@@ -38,7 +38,7 @@ export class UsersListComponent {
     this.userService.deleteUser(id).subscribe({
       next: (resp) => {
         console.log(resp, 'User deleted successfully');
-        this.getUsers(); // Refresh the list after deletion
+        this.getUsers();
       },
       error: (error) => {
         console.error('Error deleting user:', error);
